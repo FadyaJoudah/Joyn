@@ -5,6 +5,7 @@ import { Wrapper } from "@googlemaps/react-wrapper";
 import { Map } from "./components/GoogleMap/GoogleMap";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import JoyninMap from "./components/Map/Map";
+import Home from "./pages/Home/Home";
 const render = (status) => {
   return <h1>{status}</h1>;
 };
@@ -18,7 +19,7 @@ function App() {
       <h1>nav</h1>
       <Switch>
         <Route path={"/"} exact>
-          <h1>Home</h1>
+          <Home />
         </Route>
         <Route path={"/profile"}>
           <h2>Profile</h2>

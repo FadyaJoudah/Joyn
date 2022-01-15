@@ -6,7 +6,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./index.js",
     "watch": "nodemon ./index.js"
-
   },
   "author": "",
   "license": "ISC",
@@ -15,5 +14,10 @@
     "nodemon": "^2.0.15"
   },
   "dependencies": {
-    "express": "^4.17.2"
-  }}
+    "dotenv": "^11.0.0",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "passport": "^0.5.2",
+    "passport-google-oauth2": "^0.2.0"
+  }
+}
