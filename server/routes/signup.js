@@ -17,7 +17,14 @@ const signup = Router();
 // });
 
 signup.post("/", (req, res) => {
-  console.log(req.body);
+  const { db, body } = req;
+  const { email, password, name, username, vaccination } = body;
+  let vaccine = vaccination === true ? 1 : 0;
+  db.query(
+    // `INSERT INTO users(email,password,fname,username,vaccination) VALUES (${email},${password},${name},${username},${vaccination});`
+    `INSERT INTO users(email,password,fname,username,vaccination) VALUES ('${email}','${password}','${name}','${username}','${vaccine}');`
+  );
+
   res.send("OK");
 });
 

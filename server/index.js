@@ -1,11 +1,14 @@
 require("dotenv").config();
 const express = require("express");
-const signupRouter = require("./routes/signup");
-var mysql = require("mysql");
-const app = express();
+const signupRoutes = require("./routes/signup");
+const mysql = require("mysql");
+
 const { PORT } = process.env;
 
-var db = mysql.createConnection({
+const app = express();
+app.use(express.json());
+
+const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "password",
@@ -14,15 +17,19 @@ var db = mysql.createConnection({
 
 db.connect();
 
-db.query("SELECT * FROM users;", function (err, rows, fields) {
-  if (err) throw err;
+// db.query("SELECT * FROM users;", function (err, rows, fields) {
+//   if (err) throw err;
 
-  console.log("The solution is: ", rows);
+//   console.log("The solution is: ", rows);
+// });
+app.use(function (req, res, next) {
+  req.db = db; //this db comes from app.js context where you define it
+  next();
 });
-// const signUpRoute = require("./routes/signup")
-
+app.use("/signup", signupRoutes);
 // app.use("/signup", signupRoute);
 
-db.end();
+// db.end();
 // app.use("/signup", signupRouter);
+
 app.listen(PORT, () => console.log(" ok let's go 🚀🚀 "));
