@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const passport = require("passport");
+const jwt = require("jsonwebtoken");
 const { getUser } = require("../db/users");
 
 const signIn = Router();
@@ -14,7 +14,8 @@ signIn.post("/", (req, res) => {
     } else {
       const { username, password: pw } = row[0];
       if (password === pw) {
-        res.status(200).send("success");
+        const token = jwt.sign({ username }, "peewee");
+        res.status(200).json({ token });
       } else {
         res.status(404).send("failed to log in!");
       }

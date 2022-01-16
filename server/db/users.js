@@ -4,7 +4,7 @@ function addUser(email, password, name, username, vaccination) {
 }
 
 function getUser(username) {
-  const signInQuery = `SELECT username,password FROM users WHERE username = '${username}';`;
+  const signInQuery = `SELECT * FROM users WHERE username = '${username}';`;
 
   return signInQuery;
 }

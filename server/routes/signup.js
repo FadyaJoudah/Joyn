@@ -17,7 +17,6 @@ signup.post("/", (req, res) => {
           res.status(500).send("unable to sign up");
         }
       } else {
-        console.log("user created", username);
         res.status(201).send("user created successfully");
       }
     }

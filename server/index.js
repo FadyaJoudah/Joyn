@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const signupRoutes = require("./routes/signup");
 const signInRoutes = require("./routes/signIn");
+const userRoutes = require("./routes/user");
 const mysql = require("mysql");
 
 const { PORT } = process.env;
@@ -28,5 +29,6 @@ app.use(function (req, res, next) {
 
 app.use("/signup", signupRoutes);
 app.use("/signIn", signInRoutes);
+app.use("/user", userRoutes);
 
 app.listen(PORT, () => console.log(" ok let's go 🚀🚀 "));
