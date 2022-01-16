@@ -6,8 +6,10 @@ const mysql = require("mysql");
 const { PORT } = process.env;
 
 const app = express();
+// body parser turns the request body into json
 app.use(express.json());
 
+// connecting db to this server
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
@@ -17,19 +19,12 @@ const db = mysql.createConnection({
 
 db.connect();
 
-// db.query("SELECT * FROM users;", function (err, rows, fields) {
-//   if (err) throw err;
-
-//   console.log("The solution is: ", rows);
-// });
+//makes db available in request obj
 app.use(function (req, res, next) {
-  req.db = db; //this db comes from app.js context where you define it
+  req.db = db;
   next();
 });
-app.use("/signup", signupRoutes);
-// app.use("/signup", signupRoute);
 
-// db.end();
-// app.use("/signup", signupRouter);
+app.use("/signup", signupRoutes);
 
 app.listen(PORT, () => console.log(" ok let's go 🚀🚀 "));
