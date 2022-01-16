@@ -23,9 +23,4 @@ signup.post("/", (req, res) => {
     }
   );
 });
-// function (err, rows, fields) {
-//   if (err) throw err;
-
-//   console.log("The solution is: ", rows);
-// }
 module.exports = signup;
