@@ -7,6 +7,10 @@ const signIn = Router();
 signIn.post("/", (req, res) => {
   const { db, body } = req;
   const { username, password } = body;
+  if (!username || !password) {
+    res.status(500).send("cannot sign in!");
+    return;
+  }
 
   db.query(getUser(username), (err, row, fields) => {
     if (err) {

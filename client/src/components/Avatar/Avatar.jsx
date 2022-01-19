@@ -8,9 +8,9 @@ export default function Avatar() {
     <div>
       <img
         src="https://avatars.dicebear.com/api/adventurer-neutral/kiss.svg"
-        height="50%"
-        width="50%"
-        alt="avatart"
+        height="100%"
+        width="100%"
+        alt="avatar"
       />
     </div>
   );

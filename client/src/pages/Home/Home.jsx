@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div>
       {/* <Button variant="contained">Hello World</Button> */}
-      <Avatar />
+      {/* <Avatar /> */}
     </div>
   );
 }

@@ -5,12 +5,14 @@ const signInRoutes = require("./routes/signIn");
 const userRoutes = require("./routes/user");
 const eventRoutes = require("./routes/events");
 const mysql = require("mysql");
+const cors = require("cors");
 
 const { PORT } = process.env;
 
 const app = express();
 // body parser turns the request body into json
 app.use(express.json());
+app.use(cors());
 
 // connecting db to this server
 const db = mysql.createConnection({

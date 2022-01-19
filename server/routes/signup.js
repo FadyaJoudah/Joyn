@@ -4,6 +4,7 @@ const { addUser } = require("../db/users");
 const signup = Router();
 
 signup.post("/", (req, res) => {
+  //getting db into scope after assigning it to req in index line :24
   const { db, body } = req;
   const { email, password, name, username, vaccination } = body;
   let vaccine = vaccination === true ? 1 : 0;
