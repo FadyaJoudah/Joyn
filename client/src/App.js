@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import JoyninMap from "./components/Map/Map";
 import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header";
+import AllEventsList from "./components/AllEventsList/AllEventsList";
 const render = (status) => {
   return <h1>{status}</h1>;
 };
@@ -21,6 +22,10 @@ function App() {
         <Route path={"/"} exact>
           <Header />
           <Home />
+        </Route>
+        <Route path={"/eventlist"}>
+          <Header />
+          <AllEventsList />
         </Route>
         <Route path={"/profile"}>
           <Header />

@@ -43,14 +43,7 @@ export default function SignInSide() {
     const password = data.get("password");
 
     //function that contains axios request
-    signIn(username, password)
-      .then((res) => {
-        const token = res.data.token;
-        window.localStorage.setItem("token", token);
-      })
-      .catch((err) => {
-        console.log("request fail");
-      });
+    signIn(username, password);
   };
 
   return (

@@ -123,7 +123,6 @@ events.get("/all", (req, res) => {
             location: { lng: row.location.x, lat: row.location.y },
           };
         });
-        s;
         res.send(nonAuthEvents);
       }
     }

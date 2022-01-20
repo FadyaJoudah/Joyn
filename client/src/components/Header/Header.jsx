@@ -14,6 +14,7 @@ import { Avatar } from "@mui/material";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    // color:#203B4C
   },
   menuButton: {
     marginRight: theme.spacing(2),
