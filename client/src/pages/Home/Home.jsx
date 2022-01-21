@@ -6,6 +6,7 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import React from "react";
 import { blue } from "@mui/material/colors";
 import CreateEvent from "../../components/CreateEvent/CreateEvent";
+import GoogleMapsReact from "../../components/GoogleMapsReact/GoogleMapsReact";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -33,9 +34,10 @@ export default function Home() {
           <Paper className={classes.paper}>below header</Paper>
         </Grid>
         <Grid item xs={12}>
-          <Paper style={{ backgroundColor: "red" }} className={classes.myStyle}>
+          {/* <Paper style={{ backgroundColor: "red" }} className={classes.myStyle}>
             map
-          </Paper>
+          </Paper> */}
+          <GoogleMapsReact />
         </Grid>
         <Grid item xs={12}>
           <CreateEvent />

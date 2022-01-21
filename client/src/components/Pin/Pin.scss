@@ -1,0 +1,12 @@
+@use "../../styles/partials/global";
+
+.pin-svg {
+  width: 2rem;
+  height: 2rem;
+  &--light {
+    content: url("../../assets/icons/pin-light.svg");
+  }
+  &--dark {
+    content: url("../../assets/icons/pin-dark.svg");
+  }
+}
