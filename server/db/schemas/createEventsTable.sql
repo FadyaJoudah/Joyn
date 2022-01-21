@@ -3,7 +3,7 @@ CREATE TABLE events (
   user_id INT NOT NULL,
   size INT DEFAULT NULL,
   address VARCHAR (255) NOT NULL,
-  type ENUM('sport', 'food', "art", "mindfullness", "other"),
+  type VARCHAR(255) NOT NULL,
   timestamp TIMESTAMP NOT NULL,
   description TEXT NOT NULL,
   pets_allowed BOOLEAN DEFAULT NULL,

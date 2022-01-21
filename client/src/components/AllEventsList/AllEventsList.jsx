@@ -14,7 +14,7 @@ export default function AllEventsList() {
     <div>
       {eventList.map((evet) => {
         if (localStorage.getItem("token")) {
-          return <div key={evet.id}>{evet.type}</div>;
+          return <div key={evet.id}>{evet.description}</div>;
         } else {
           return <div key={evet.id}>{evet.type}</div>;
         }

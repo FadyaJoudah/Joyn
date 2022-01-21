@@ -37,7 +37,7 @@ export function createEvent(
         size,
         address,
         type,
-        timestamp,
+        timestamp: "2013-08-05 18:19:03",
         description,
         petsAllowed,
         vaccinationRequired,

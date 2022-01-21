@@ -49,6 +49,7 @@ events.post("/create", (req, res) => {
     ),
     (err, row, fields) => {
       if (err) {
+        console.log(err);
         res.send("failed to create an event!");
       } else {
         //select the id of the event
