@@ -8,6 +8,22 @@ import JoyninMap from "./components/Map/Map";
 import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header";
 import AllEventsList from "./components/AllEventsList/AllEventsList";
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
+import { amber, blueGrey } from "@mui/material/colors";
+import { colors } from "@material-ui/core";
+import CreateEvent from "./components/CreateEvent/CreateEvent";
+
+export const myTheme = createTheme({
+  palette: {
+    primary: {
+      main: "#607d8b",
+    },
+    secondary: {
+      main: "#ffc107",
+    },
+  },
+});
+
 const render = (status) => {
   return <h1>{status}</h1>;
 };
@@ -17,25 +33,30 @@ const vancouver = {
 };
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path={"/"} exact>
-          <Header />
-          <Home />
-        </Route>
-        <Route path={"/eventlist"}>
-          <Header />
-          <AllEventsList />
-        </Route>
-        <Route path={"/profile"}>
-          <Header />
-          profile page here
-        </Route>
-        <Route path={"/signin"}>
-          <SignIn />
-        </Route>
-      </Switch>
-    </Router>
+    <ThemeProvider theme={myTheme}>
+      <Router>
+        <Switch>
+          <Route path={"/"} exact>
+            <Header />
+            <Home />
+          </Route>
+          <Route path={"/eventlist"}>
+            <Header />
+            <AllEventsList />
+          </Route>
+          <Route path={"/profile"}>
+            <Header />
+            profile page here
+          </Route>
+          <Route path={"/signin"}>
+            <SignIn />
+          </Route>
+          <Route path={"/createevent"}>
+            <Header />
+          </Route>
+        </Switch>
+      </Router>
+    </ThemeProvider>
   );
 }
 
