@@ -1,6 +1,7 @@
 import axios from "axios";
 const token = window.localStorage.getItem("token");
 axios.defaults.headers.common["Authorization"] = token;
+//axios requests
 
 export function signIn(username, password) {
   return axios
@@ -16,6 +17,7 @@ export function signIn(username, password) {
       console.log("request fail");
     });
 }
+
 export function eventList() {
   return axios.get("http://localhost:8080/events/all");
 }

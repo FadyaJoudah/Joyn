@@ -10,11 +10,10 @@ import FormGroup from "@material-ui/core/FormGroup";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import { Avatar } from "@mui/material";
-
+//TODO: clean up header and change theme
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    // color:#203B4C
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -63,15 +62,7 @@ export default function MenuAppBar() {
               <div onClick={handleMenu}>
                 <Avatar />
               </div>
-              {/* <IconButton
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              
-              color="inherit"
-              >
-                <Avatar />
-              </IconButton> */}
+
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}

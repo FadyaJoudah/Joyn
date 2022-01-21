@@ -4,6 +4,7 @@ import "./Pin.scss";
 export default function Pin() {
   const [open, setOpen] = useState(false);
 
+  //changes the look of the pin depending on the state
   function onPinClick() {
     setOpen(!open);
   }
