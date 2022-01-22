@@ -9,7 +9,9 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import FormGroup from "@material-ui/core/FormGroup";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
+// import Avatar from "@mui/material/Avatar";
 import { Avatar } from "@mui/material";
+import "./Header.scss";
 //TODO: clean up header and change theme
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,7 +45,6 @@ export default function MenuAppBar() {
 
   return (
     <div className={classes.root}>
-      <FormGroup></FormGroup>
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -54,13 +55,16 @@ export default function MenuAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant={4} className={classes.title}>
             JOYN
           </Typography>
           {auth && (
             <div>
               <div onClick={handleMenu}>
-                <Avatar />
+                <Avatar
+                  className="avatar"
+                  src="https://avatars.dicebear.com/api/croodles/.svg"
+                />
               </div>
 
               <Menu

@@ -4,22 +4,11 @@ import { Wrapper } from "@googlemaps/react-wrapper";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header";
-import AllEventsList from "./components/AllEventsList/AllEventsList";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
-import { amber, blueGrey } from "@mui/material/colors";
+import AllEventsList from "./components/AllEventsList/AllEventsList";
 import { colors } from "@material-ui/core";
 import CreateEvent from "./components/CreateEvent/CreateEvent";
-
-export const myTheme = createTheme({
-  palette: {
-    primary: {
-      main: "#607d8b",
-    },
-    secondary: {
-      main: "#ffc107",
-    },
-  },
-});
+import { myTheme } from "./components/Theme/MyTheme";
 
 const render = (status) => {
   return <h1>{status}</h1>;

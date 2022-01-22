@@ -3,7 +3,7 @@ import "./Home.scss";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import React from "react";
+import React, { useState } from "react";
 import { blue } from "@mui/material/colors";
 import CreateEvent from "../../components/CreateEvent/CreateEvent";
 import GoogleMapsReact from "../../components/GoogleMapsReact/GoogleMapsReact";
@@ -25,8 +25,11 @@ const useStyles = makeStyles((theme) =>
 );
 
 export default function Home() {
+  const [newLocation, setNewLocation] = useState();
   const classes = useStyles();
-
+  function onMapClick(location) {
+    setNewLocation(location);
+  }
   return (
     <div style={{ width: "100%", padding: "1px" }}>
       <Grid container spacing={1}>
@@ -37,10 +40,10 @@ export default function Home() {
           {/* <Paper style={{ backgroundColor: "red" }} className={classes.myStyle}>
             map
           </Paper> */}
-          <GoogleMapsReact />
+          <GoogleMapsReact onMapClick={onMapClick} Nawar={5} />
         </Grid>
         <Grid item xs={12}>
-          <CreateEvent />
+          <CreateEvent location={newLocation} />
         </Grid>
       </Grid>
     </div>

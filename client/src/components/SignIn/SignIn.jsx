@@ -14,6 +14,7 @@ import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { signIn } from "../../API/API";
 
+//TODO: refactor and add comments & change themes
 function Copyright(props) {
   return (
     <Typography

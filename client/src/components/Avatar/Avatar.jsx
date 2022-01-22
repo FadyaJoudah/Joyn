@@ -1,5 +1,6 @@
 // import { createAvatar } from "@dicebear/avatars";
 // import * as style from "@dicebear/adventurer";
+import "./Avatar.scss";
 
 import React from "react";
 
@@ -11,6 +12,7 @@ export default function Avatar() {
         height="100%"
         width="100%"
         alt="avatar"
+        className="avatar"
       />
     </div>
   );

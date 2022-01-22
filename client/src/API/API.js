@@ -1,6 +1,7 @@
 import axios from "axios";
 const token = window.localStorage.getItem("token");
 axios.defaults.headers.common["Authorization"] = token;
+
 //axios requests
 
 export function signIn(username, password) {
