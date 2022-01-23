@@ -5,18 +5,10 @@ axios.defaults.headers.common["Authorization"] = token;
 //axios requests
 
 export function signIn(username, password) {
-  return axios
-    .post("http://localhost:8080/signin", {
-      username,
-      password,
-    })
-    .then((res) => {
-      const token = res.data.token;
-      window.localStorage.setItem("token", token);
-    })
-    .catch((err) => {
-      console.log("request fail");
-    });
+  return axios.post("http://localhost:8080/signin", {
+    username,
+    password,
+  });
 }
 
 export function eventList() {

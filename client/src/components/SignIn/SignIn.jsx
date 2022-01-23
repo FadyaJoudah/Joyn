@@ -13,6 +13,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { signIn } from "../../API/API";
+import { useHistory } from "react-router-dom";
 
 //TODO: refactor and add comments & change themes
 function Copyright(props) {
@@ -36,6 +37,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignInSide() {
+  const history = useHistory();
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -44,7 +46,15 @@ export default function SignInSide() {
     const password = data.get("password");
 
     //function that contains axios request
-    signIn(username, password);
+    signIn(username, password)
+      .then((res) => {
+        const token = res.data.token;
+        window.localStorage.setItem("token", token);
+        history.push("/");
+      })
+      .catch((err) => {
+        console.log("request fail");
+      });
   };
 
   return (

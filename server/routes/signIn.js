@@ -16,6 +16,9 @@ signIn.post("/", (req, res) => {
     if (err) {
       res.status(404).send("failed to log in!");
     } else {
+      if (row.length === 0) {
+        res.status(404).send("failed to log in!");
+      }
       const { username, password: pw, id: userID } = row[0];
       if (password === pw) {
         const token = jwt.sign({ username, userID }, "peewee");

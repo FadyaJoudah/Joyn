@@ -93,9 +93,11 @@ events.get("/all", (req, res) => {
       //if the user is logged in they will have access to all events info
       if (decodedToken) {
         const allEvents = rows.map((row) => {
+          console.log(row);
           return {
             id: row.id,
-            userID: row.user_id,
+            creatureID: row.user_id,
+            createdBy: row.username,
             size: row.size,
             address: row.address,
             type: row.type,

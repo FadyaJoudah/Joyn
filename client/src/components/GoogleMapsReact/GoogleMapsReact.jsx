@@ -16,7 +16,7 @@ const vancouver = {
 export default function Map({ onMapClick }) {
   const [eventList, setEventList] = useState([]);
   const [popUpEvent, setPopUpEvent] = useState();
-
+  console.log("this is list", eventList, "this is event", popUpEvent);
   //request events on the first render only, and when refreshing the page
   useEffect(() => {
     axios.get("http://localhost:8080/events/all").then((res) => {

@@ -10,11 +10,13 @@ export default function PopUp({
     description,
     petsAllowed,
     vaccinationRequired,
+    createdBy,
   },
 }) {
   return (
     <div>
-      <Card sx={{ width: 100, height: 100 }}>
+      <Card className="card" sx={{ width: 100, height: 100 }}>
+        <p>@{createdBy}</p>
         <p>{size}</p>
         <p>{address}</p>
         <p>{type}</p>
