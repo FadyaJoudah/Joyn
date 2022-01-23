@@ -18,9 +18,9 @@ export default function SizeField({ onChange }) {
       <Autocomplete
         onInputChange={onChange}
         options={numberOfPeople}
-        sx={{ width: 300 }}
+        sx={{ width: "100%" }}
         renderInput={(params) => (
-          <TextField {...params} label="Capacity" variant="standard" />
+          <TextField {...params} label="Capacity" variant="outlined" required />
         )}
       />
     </div>

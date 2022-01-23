@@ -127,6 +127,7 @@ export default function SignInSide() {
                 type="submit"
                 fullWidth
                 variant="contained"
+                color={"primary"}
                 sx={{ mt: 3, mb: 2 }}
               >
                 Sign In

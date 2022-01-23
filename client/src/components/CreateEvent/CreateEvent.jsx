@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useStyles } from "react";
 import { Stack, TextField, Button } from "@mui/material";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -11,8 +11,17 @@ import { setDate } from "date-fns";
 import { createEvent } from "../../API/API";
 import SizeField from "../SizeField/SizeField";
 import "./CreateEvent.scss";
+import { makeStyles } from "@material-ui/core";
+import { ClassNames, ThemeProvider } from "@emotion/react";
+import { myTheme } from "../Theme/MyTheme";
 // import { grid } from "@mui/system";
-
+// const useSt = makeStyles({
+//   field: {
+//     marginTop: 16,
+//     marginBottom: 16,
+//     width: 16,
+//   },
+// });
 const eventType = [
   { label: "Sports" },
   { label: "Social" },
@@ -21,7 +30,7 @@ const eventType = [
   { label: "Volunteer" },
 ];
 
-export default function CreateEvent({ location }) {
+export default function CreateEvent({ location, onCancelEvent }) {
   const [value, setValue] = useState(null);
   const [size, setSize] = useState(1);
   const [address, setAddress] = useState("");
@@ -47,26 +56,28 @@ export default function CreateEvent({ location }) {
 
   return (
     <div>
-      <Stack className="stack" spacing={3}>
+      <Stack spacing={3} className="create-event-container">
         <SizeField onChange={(e, value) => setSize(value)} />
         <TextField
           onChange={(e) => setAddress(e.target.value)}
           id="outlined-basic"
           label="Address"
-          variant="standard"
+          variant="outlined"
+          required
         />
-        <div>{JSON.stringify(location)}</div>
         <Autocomplete
           onInputChange={(e, value) => setType(value)}
           options={eventType}
-          sx={{ width: 300 }}
+          sx={{ width: "100%" }}
           renderInput={(params) => (
-            <TextField {...params} label="Type" variant="standard" />
+            <TextField {...params} label="Type" variant="outlined" required />
           )}
         />
         <LocalizationProvider dateAdapter={AdapterDateFns}>
           <DateTimePicker
-            renderInput={(props) => <TextField {...props} variant="standard" />}
+            renderInput={(props) => (
+              <TextField {...props} variant="outlined" required />
+            )}
             label="Pick a Date"
             value={timeStamp}
             onChange={(newValue) => {
@@ -75,9 +86,11 @@ export default function CreateEvent({ location }) {
           />
         </LocalizationProvider>
         <TextField
+          required
+          fullWidth
           id="outlined-basic"
           label="Description"
-          variant="standard"
+          variant="outlined"
           onChange={(e) => setDescription(e.target.value)}
         />
         <FormGroup>
@@ -97,12 +110,22 @@ export default function CreateEvent({ location }) {
             control={<Switch defaultChecked />}
             label="Must Be Vaccinated"
           />
+
           <Button
+            style={{ marginTop: 20 }}
             onClick={handleCreateEvent}
             variant="contained"
             disabled={!location}
           >
             Create
+          </Button>
+          <Button
+            style={{ marginTop: 20 }}
+            onClick={onCancelEvent}
+            variant="outlined"
+            disabled={!location}
+          >
+            Cancel
           </Button>
         </FormGroup>
       </Stack>

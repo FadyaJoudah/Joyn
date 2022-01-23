@@ -13,7 +13,7 @@ const vancouver = {
   lng: -123.13854,
 };
 
-export default function Map({ onMapClick }) {
+export default function Map({ onMapClick, newLocation }) {
   const [eventList, setEventList] = useState([]);
   const [popUpEvent, setPopUpEvent] = useState();
   console.log("this is list", eventList, "this is event", popUpEvent);
@@ -34,8 +34,8 @@ export default function Map({ onMapClick }) {
       <GoogleMapReact
         onClick={({ x, y, lat, lng, event }) => onMapClick({ lat, lng })}
         //TODO: use env of key
-        bootstrapURLKeys={{ key: "AIzaSyAm9zGabaaseCQlbCarLu3rSkqKi7j-Asc" }}
-        //default map view and xoom
+        // bootstrapURLKeys={{ key: "AIzaSyAm9zGabaaseCQlbCarLu3rSkqKi7j-Asc" }}
+        //default map view and zoom
         defaultCenter={vancouver}
         defaultZoom={13}
         options={{
@@ -67,6 +67,7 @@ export default function Map({ onMapClick }) {
             />
           );
         })}
+        {newLocation && <Pin lat={newLocation.lat} lng={newLocation.lng} />}
         {popUpEvent ? (
           <PopUp
             lat={popUpEvent.location.lat}

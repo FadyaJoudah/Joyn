@@ -1,4 +1,4 @@
-// import "./App.scss";
+import "./App.scss";
 import SignIn from "./components/SignIn/SignIn";
 import { Wrapper } from "@googlemaps/react-wrapper";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";

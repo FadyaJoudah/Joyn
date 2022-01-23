@@ -7,6 +7,9 @@ import React, { useState } from "react";
 import { blue } from "@mui/material/colors";
 import CreateEvent from "../../components/CreateEvent/CreateEvent";
 import GoogleMapsReact from "../../components/GoogleMapsReact/GoogleMapsReact";
+import { myTheme } from "../../components/Theme/MyTheme";
+import { Button, Box } from "@mui/material";
+import { flexbox, palette } from "@mui/system";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -19,7 +22,8 @@ const useStyles = makeStyles((theme) =>
       flexGrow: 1,
     },
     myStyle: {
-      padding: theme.spacing(20),
+      padding: theme.spacing(1),
+      height: theme.spacing(50),
     },
   })
 );
@@ -38,31 +42,59 @@ export default function Home() {
     }
     setNewLocation(location);
   }
+
+  function resetNewEvent() {
+    setNewLocation();
+    setAllowCreating();
+  }
   return (
     <div style={{ width: "100%", padding: "1px" }}>
       <Grid container spacing={1}>
         <Grid item xs={12} sm={"320px"}>
-          <Paper className={classes.paper}>
+          <Paper className={classes.myStyle}>
             <div className="image">
               <div className="image__one">this is image1</div>
               <div className="image__two">this is image2</div>
               <div className="image__color-block">this is color block</div>
             </div>
           </Paper>
-          <button onClick={allowCreateHandler}>Create Your Event </button>
-          {allowCreating && !newLocation && (
-            <div>Pick A location for your event </div>
+        </Grid>
+        <Grid item xs={12} sm={8}>
+          <GoogleMapsReact onMapClick={onMapClick} newLocation={newLocation} />
+        </Grid>
+        <Grid item sm={4}>
+          {newLocation ? (
+            <CreateEvent location={newLocation} onCancelEvent={resetNewEvent} />
+          ) : (
+            <div className=" create-event__container">
+              <Button
+                style={{ marginTop: 20 }}
+                onClick={allowCreateHandler}
+                variant="contained"
+                color={"primary"}
+                className="create-event__button"
+              >
+                Create New Event
+              </Button>
+              {!allowCreating && (
+                <div className=" create-event__instructions">
+                  Expand Your Circle
+                </div>
+              )}
+
+              {allowCreating && !newLocation && (
+                <div className=" create-event__instructions">
+                  Pick A Location For Your Event
+                </div>
+              )}
+              {allowCreating && newLocation && (
+                <div className=" create-event__instructions">
+                  Complete The Event Information
+                </div>
+              )}
+            </div>
           )}
-          {allowCreating && newLocation && <div>fill the rest </div>}
         </Grid>
-        <Grid item xs={12} sm={newLocation ? 8 : 12}>
-          <GoogleMapsReact onMapClick={onMapClick} />
-        </Grid>
-        {newLocation && (
-          <Grid item xs={12} sm={4}>
-            <CreateEvent location={newLocation} />
-          </Grid>
-        )}
       </Grid>
     </div>
   );

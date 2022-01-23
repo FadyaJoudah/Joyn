@@ -1,6 +1,9 @@
+@use "../../styles/partials/mixins" as *;
+
 .image {
+  display: flex;
   width: 15rem;
-  height: 10rem;
+  height: 8rem;
 
   &__one {
     height: 100%;
@@ -16,5 +19,17 @@
   }
   &__color-block {
     height: 100%;
+  }
+}
+.create-event {
+  &__container {
+    height: 50%;
+    @include flex(column, center, center);
+    align-items: center;
+  }
+  &__instructions {
+    margin: 1rem;
+    font-weight: 500;
+    line-height: 2;
   }
 }

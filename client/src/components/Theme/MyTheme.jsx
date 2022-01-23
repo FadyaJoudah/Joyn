@@ -8,5 +8,12 @@ export const myTheme = createTheme({
     secondary: {
       main: "#ffc107",
     },
+    typography: {
+      fontFamily: "Lato",
+      fontWeightThin: 100,
+      fontWeightLight: 300,
+      fontWeightRegular: 400,
+      fontWeightBold: 700,
+    },
   },
 });
