@@ -9,6 +9,7 @@ import AllEventsList from "./components/AllEventsList/AllEventsList";
 import { colors } from "@material-ui/core";
 import CreateEvent from "./components/CreateEvent/CreateEvent";
 import { myTheme } from "./components/Theme/MyTheme";
+import LandingPage from "./pages/LandingPage/LandingPage";
 
 const render = (status) => {
   return <h1>{status}</h1>;
@@ -23,6 +24,9 @@ function App() {
       <Router>
         <Switch>
           <Route path={"/"} exact>
+            <LandingPage />
+          </Route>
+          <Route path={"/home"}>
             <Header />
             <Home />
           </Route>

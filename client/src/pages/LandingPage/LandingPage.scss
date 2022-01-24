@@ -1,0 +1,40 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+.landing {
+  width: 100%;
+  height: 100%;
+  &__logo {
+    position: absolute;
+    top: 5%;
+    height: 3rem;
+    margin: 1.5rem;
+    text-shadow: 2px 2px rgba(87, 88, 83, 0.064);
+
+    color: white;
+  }
+  &__text-container {
+    @include flex(column, space-between, _);
+    position: absolute;
+    top: 200px;
+    height: 5rem;
+    margin: 1.5rem;
+  }
+  &__text {
+    color: white;
+  }
+  &__main-video {
+    min-width: 100%;
+    min-height: 100%;
+  }
+}
+.shadow {
+  position: absolute;
+
+  opacity: 50%;
+  height: 30rem;
+  background-color: red;
+  position: absolute;
+  top: 200px;
+  height: 5rem;
+  margin: 1.5rem;
+}

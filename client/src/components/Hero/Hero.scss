@@ -1,0 +1,57 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+.image {
+  background-color: pink;
+  // display: flex;
+  width: 100%;
+  height: 20rem;
+  margin: auto;
+
+  &__one {
+    height: 100%;
+    width: 100%;
+    // @include tablet {
+    //   height: 15rem;
+    // top: 10rem;
+    // left: 20rem;
+    // z-index: 1;
+    //   width: 25rem;
+    // }
+    background-image: url("../../assets/images/photo-1565113051777-a5b348a45d40.jpeg");
+    background-size: cover;
+    // position: absolute;
+    // top: 3.5rem;
+    // left: 9.8rem;
+    // z-index: 1;
+  }
+  &__two {
+    background-color: rgba(0, 0, 0, 0.187);
+    // height: 5rem;
+    // width: 15rem;
+    // // @include tablet {
+    // //   height: 15rem;
+    // // top: 10rem;
+    // // left: 8rem;
+    // // z-index: 1;
+    // //   width: 20rem;
+    // // }
+    // background-color: rgba(238, 231, 173, 0.276);
+    // // background-image: url("../../assets/images/photo-1598437070976-fd6701d4533b.jpeg");
+    // // background-size: cover;
+    // position: absolute;
+    // top: 10rem;
+    // left: 2rem;
+    // z-index: 1;
+  }
+  &__color-block {
+    background-color: blanchedalmond;
+    // height: 6rem;
+    // width: 15rem;
+    // background-color: $primary-bg;
+    // position: absolute;
+    // top: 13rem;
+    // left: 0rem;
+    // z-index: 01;
+    // // z-index: 1;
+  }
+}

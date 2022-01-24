@@ -1,27 +1,10 @@
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
-.image {
-  display: flex;
-  width: 15rem;
-  height: 8rem;
-
-  &__one {
-    height: 100%;
-    background-color: pink;
-    background-image: url("../../assets/images/photo-1565113051777-a5b348a45d40.jpeg");
-    background-size: cover;
-  }
-  &__two {
-    height: 100%;
-    background-color: burlywood;
-    background-image: url("../../assets/images/photo-1598437070976-fd6701d4533b.jpeg");
-    background-size: cover;
-  }
-  &__color-block {
-    height: 100%;
-  }
-}
 .create-event {
+  border-left: 6px solid $secondary-accent;
+  height: 100%;
+  width: 100%;
   &__container {
     height: 50%;
     @include flex(column, center, center);
@@ -32,4 +15,7 @@
     font-weight: 500;
     line-height: 2;
   }
+}
+.below-header {
+  border-bottom: 6px solid $primary-bg;
 }
