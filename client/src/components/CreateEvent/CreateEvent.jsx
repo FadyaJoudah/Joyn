@@ -57,6 +57,9 @@ export default function CreateEvent({ location, onCancelEvent }) {
   return (
     <div>
       <Stack spacing={3} className="create-event-container">
+        <div className=" create-event__instructions">
+          Complete The Event Information
+        </div>
         <SizeField onChange={(e, value) => setSize(value)} />
         <TextField
           onChange={(e) => setAddress(e.target.value)}
@@ -112,7 +115,7 @@ export default function CreateEvent({ location, onCancelEvent }) {
           />
 
           <Button
-            style={{ marginTop: 20 }}
+            style={{ marginTop: 20, backgroundColor: "#FCCA42" }}
             onClick={handleCreateEvent}
             variant="contained"
             disabled={!location}

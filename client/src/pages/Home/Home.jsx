@@ -15,7 +15,7 @@ import Hero from "../../components/Hero/Hero";
 const useStyles = makeStyles((theme) =>
   createStyles({
     paper: {
-      padding: theme.spacing(20, 18),
+      // padding: theme.spacing(20, 18),
       textAlign: "center",
       color: theme.palette.text.secondary,
     },
@@ -48,6 +48,38 @@ export default function Home() {
     setNewLocation();
     setAllowCreating();
   }
+  const createEventForm = newLocation ? (
+    <CreateEvent location={newLocation} onCancelEvent={resetNewEvent} />
+  ) : (
+    <div className="create-event">
+      <div className=" create-event__container">
+        <Button
+          style={{ marginTop: 20, backgroundColor: "#FCCA42" }}
+          onClick={allowCreateHandler}
+          variant="contained"
+          color={"primary"}
+          className="create-event__button"
+        >
+          Create New Event
+        </Button>
+        {!allowCreating && (
+          <div className=" create-event__instructions">Expand Your Circle</div>
+        )}
+
+        {allowCreating && !newLocation && (
+          <div className=" create-event__instructions">
+            Pick A Location For Your Event
+          </div>
+        )}
+        {/* {allowCreating && newLocation && (
+          // <div className=" create-event__instructions">
+          //   Complete The Event Information
+          // </div>
+        )} */}
+      </div>
+    </div>
+  );
+
   return (
     <div style={{ width: "100%", padding: "1px" }}>
       <Grid container>
@@ -57,43 +89,14 @@ export default function Home() {
           </Paper>
         </Grid>
 
-        <Grid item xs={12} sm={8}>
+        <Grid item display={{ xs: "block", sm: "none" }}>
+          {createEventForm}
+        </Grid>
+        <Grid className={classes.mobile} item xs={12} sm={8}>
           <GoogleMapsReact onMapClick={onMapClick} newLocation={newLocation} />
         </Grid>
-        <Grid item sm={4}>
-          {newLocation ? (
-            <CreateEvent location={newLocation} onCancelEvent={resetNewEvent} />
-          ) : (
-            <div className="create-event">
-              <div className=" create-event__container">
-                <Button
-                  style={{ marginTop: 20 }}
-                  onClick={allowCreateHandler}
-                  variant="contained"
-                  color={"primary"}
-                  className="create-event__button"
-                >
-                  Create New Event
-                </Button>
-                {!allowCreating && (
-                  <div className=" create-event__instructions">
-                    Expand Your Circle
-                  </div>
-                )}
-
-                {allowCreating && !newLocation && (
-                  <div className=" create-event__instructions">
-                    Pick A Location For Your Event
-                  </div>
-                )}
-                {allowCreating && newLocation && (
-                  <div className=" create-event__instructions">
-                    Complete The Event Information
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
+        <Grid item display={{ xs: "none", sm: "block" }} sm={4}>
+          {createEventForm}
         </Grid>
       </Grid>
     </div>

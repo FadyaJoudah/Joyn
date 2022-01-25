@@ -1,15 +1,22 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
 .image {
-  background-color: pink;
+  // background-color: pink;
   // display: flex;
   width: 100%;
   height: 20rem;
   margin: auto;
 
   &__one {
-    height: 100%;
-    width: 100%;
+    position: absolute;
+    height: 10rem;
+    width: 50%;
+    top: 5rem;
+    left: 9rem;
+    z-index: 0;
+    border-radius: 10px;
+    // width: 25rem;
     // @include tablet {
     //   height: 15rem;
     // top: 10rem;
@@ -17,7 +24,7 @@
     // z-index: 1;
     //   width: 25rem;
     // }
-    background-image: url("../../assets/images/photo-1565113051777-a5b348a45d40.jpeg");
+    background-image: url("../../assets/images/pexels-photo-5741042.jpeg");
     background-size: cover;
     // position: absolute;
     // top: 3.5rem;
@@ -26,8 +33,13 @@
   }
   &__two {
     background-color: rgba(0, 0, 0, 0.187);
-    // height: 5rem;
-    // width: 15rem;
+    height: 10rem;
+    width: 15rem;
+    position: absolute;
+    top: 15rem;
+    left: 2rem;
+    z-index: 1;
+    border-radius: 10px;
     // // @include tablet {
     // //   height: 15rem;
     // // top: 10rem;
@@ -36,22 +48,21 @@
     // //   width: 20rem;
     // // }
     // background-color: rgba(238, 231, 173, 0.276);
-    // // background-image: url("../../assets/images/photo-1598437070976-fd6701d4533b.jpeg");
-    // // background-size: cover;
-    // position: absolute;
-    // top: 10rem;
-    // left: 2rem;
-    // z-index: 1;
+    // background-image: url("../../assets/images/photo-1565113051777-.jpeg");
+    content: url("../../assets/SVG/undraw_goal_-0-v5v.svg");
+    background-size: cover;
   }
   &__color-block {
     background-color: blanchedalmond;
-    // height: 6rem;
-    // width: 15rem;
-    // background-color: $primary-bg;
-    // position: absolute;
-    // top: 13rem;
-    // left: 0rem;
-    // z-index: 01;
-    // // z-index: 1;
+    height: 6rem;
+    width: 15rem;
+    background-color: $primary-bg;
+    opacity: 80%;
+    border-radius: 6px;
+    position: absolute;
+    top: 13rem;
+    left: 1rem;
+    z-index: 01;
+    // z-index: 1;
   }
 }

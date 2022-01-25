@@ -4,9 +4,7 @@ export const myTheme = createTheme({
   palette: {
     primary: {
       main: "#607d8b",
-    },
-    secondary: {
-      main: "#ffc107",
+      secondary: "#ffc107",
     },
     typography: {
       fontFamily: "Lato",

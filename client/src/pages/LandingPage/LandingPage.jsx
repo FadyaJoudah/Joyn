@@ -1,6 +1,4 @@
 import React from "react";
-import Hero from "../../components/Hero/Hero";
-import { Typography } from "@mui/material";
 import "./LandingPage.scss";
 
 export default function LandingPage() {
@@ -13,12 +11,12 @@ export default function LandingPage() {
         <p className="landing__text">Make New Friends</p>
         <p className="landing__text">Invite People to Your World</p>
       </div>
-      <video autoPlay muted loop className="landing__main-video">
+      {/* <video autoPlay muted loop className="landing__main-video">
         <source
           type="video/mp4"
-          src="https://vod-progressive.akamaized.net/exp=1643013436~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4675%2F18%2F473378199%2F2109778538.mp4~hmac=0f238286fc2d0f5bedcfd3ced1b9582955c00ac45ba5f25ef8773acf945220b1/vimeo-prod-skyfire-std-us/01/4675/18/473378199/2109778538.mp4?filename=pexels-cottonbro-5730324.mp4"
+          src="https://vod-progressive.akamaized.net/exp=1643074518~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4675%2F18%2F473378199%2F2109778538.mp4~hmac=f11f8160f23ccb8af4ef8580784e13eaefc4e9cdde139f42a206bb2838df5be0/vimeo-prod-skyfire-std-us/01/4675/18/473378199/2109778538.mp4?filename=pexels-cottonbro-5730324.mp4"
         />
-      </video>
+      </video> */}
       {/* <video autoPlay muted loop className="landing__main-video">
         <source
           type="video/mp4"

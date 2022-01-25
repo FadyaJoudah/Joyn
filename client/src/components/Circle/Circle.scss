@@ -1,11 +1,23 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
-.circle {
-  background-color: black;
-  width: 30px;
-  height: 30px;
-  background: $secondary-accent;
+.main {
+  width: 2.5rem;
+  height: 2.5rem;
+  // border: 1px solid #ccc;
+  position: absolute;
+  top: 0.3125rem;
+  bottom: 0;
+  left: 0;
+  right: 18.5rem;
+  margin: auto;
   border-radius: 50%;
+}
+
+.circle {
+  width: 0.625rem;
+  height: 0.625rem;
+  background: $secondary-accent;
+  border-radius: 100%;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -18,9 +30,9 @@
 
 @keyframes circle {
   0% {
-    transform: rotate(0deg) translate(-165px) rotate(0deg);
+    transform: rotate(0deg) translate(-1.125rem) rotate(0deg);
   }
   100% {
-    transform: rotate(360deg) translate(-165px) rotate(-360deg);
+    transform: rotate(360deg) translate(-1.125rem) rotate(-360deg);
   }
 }

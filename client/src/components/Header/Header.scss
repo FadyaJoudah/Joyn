@@ -1,3 +1,8 @@
+@use "../../styles/partials/variables" as *;
 .avatar {
   background-color: white;
+}
+.header {
+  background-color: $primary-bg;
+  border-bottom: 1px white;
 }

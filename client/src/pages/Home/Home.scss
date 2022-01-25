@@ -2,12 +2,21 @@
 @use "../../styles/partials/variables" as *;
 
 .create-event {
-  border-left: 6px solid $secondary-accent;
   height: 100%;
-  width: 100%;
+  width: 24.3rem;
+
+  // background-color: $secondary-accent;
+  @include flex(_, center, center);
+  @include tablet {
+    border-left: 6px solid $secondary-accent;
+    height: 20rem;
+  }
+  &__map {
+    height: 3rem;
+  }
   &__container {
     height: 50%;
-    @include flex(column, center, center);
+    @include flex(column, center, space-around);
     align-items: center;
   }
   &__instructions {
@@ -17,5 +26,8 @@
   }
 }
 .below-header {
-  border-bottom: 6px solid $primary-bg;
+  @include tablet {
+    // height: 10rem;
+    border-bottom: 6px solid $primary-bg;
+  }
 }

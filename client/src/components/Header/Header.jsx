@@ -12,11 +12,13 @@ import Menu from "@material-ui/core/Menu";
 import { useHistory } from "react-router-dom";
 import { Avatar } from "@mui/material";
 import axios from "axios";
+import Circle from "../Circle/Circle";
 import "./Header.scss";
 //TODO: clean up header and change theme
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    backgroundColor: "#203B4C",
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -57,11 +59,12 @@ export default function MenuAppBar() {
   };
 
   return (
-    <div className={classes.root}>
+    <div>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar className="header">
           <Typography variant={4} className={classes.title}>
             JOYN
+            {/* <Circle /> */}
           </Typography>
           {auth && (
             <div>

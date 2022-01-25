@@ -9,7 +9,6 @@ export default function Hero() {
         <div className="image__one">this is image1</div>
         <div className="image__two">this is image2</div>
         {/* TODO: check out why the keyframes doesn't work */}
-        {/* <Circle /> */}
 
         <div className="image__color-block">this is color block</div>
       </div>
