@@ -1,0 +1,80 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.card {
+  transform: translateY(-100%) translateX(-45%);
+  background-color: $primary-bg-clear;
+  overflow: hidden;
+  height: 18rem;
+  width: 20rem;
+  border-radius: 20px;
+}
+.event {
+  @include text-settings(15px, _, _);
+  color: white;
+  margin: 0.5rem 0 0 0;
+  height: 100%;
+  width: 100%;
+
+  &__wrapper {
+    height: 100%;
+    width: 100%;
+    margin: 0.5rem 1rem;
+  }
+
+  &__user-info {
+    // margin: 0.5rem 0.5rem 0 0;
+    // height: 4rem;
+    // width: 8rem;
+    @include flex(row, _, center);
+  }
+  &__avatar {
+    margin: 0.2rem;
+    background-color: white;
+  }
+  &__info {
+    margin: 0.5rem;
+    &--user-name {
+      width: 100%;
+      border-radius: 3px;
+    }
+
+    &--type {
+      margin: 0.5rem 0 0 2rem;
+    }
+    &--description {
+      @include text-settings(14px, _, _);
+    }
+  }
+}
+
+.container {
+  margin: 0.8rem 0 0 0;
+  @include flex(row, _, _);
+}
+
+.icon {
+  margin: 0.2rem;
+  &--description {
+    content: url("../../assets/SVG/info.svg");
+  }
+  &--size {
+    content: url("../../assets/SVG/users\ \(1\).svg");
+  }
+  &--address {
+    content: url("../../assets/SVG/map-pin.svg");
+  }
+  &--date {
+    content: url("../../assets/SVG/calendar.svg");
+  }
+}
+.triangle {
+  content: " ";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: rem;
+  top: 250px;
+  border: 25px solid;
+  border-color: rgb(255, 248, 248) transparent transparent #666;
+}

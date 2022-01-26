@@ -14,14 +14,7 @@ import "./CreateEvent.scss";
 import { makeStyles } from "@material-ui/core";
 import { ClassNames, ThemeProvider } from "@emotion/react";
 import { myTheme } from "../Theme/MyTheme";
-// import { grid } from "@mui/system";
-// const useSt = makeStyles({
-//   field: {
-//     marginTop: 16,
-//     marginBottom: 16,
-//     width: 16,
-//   },
-// });
+
 const eventType = [
   { label: "Sports" },
   { label: "Social" },
@@ -31,6 +24,8 @@ const eventType = [
 ];
 
 export default function CreateEvent({ location, onCancelEvent }) {
+  // const classes = useStyles();
+
   const [value, setValue] = useState(null);
   const [size, setSize] = useState(1);
   const [address, setAddress] = useState("");
@@ -115,7 +110,10 @@ export default function CreateEvent({ location, onCancelEvent }) {
           />
 
           <Button
-            style={{ marginTop: 20, backgroundColor: "#FCCA42" }}
+            style={{
+              marginTop: 20,
+              backgroundColor: "#FCCA42",
+            }}
             onClick={handleCreateEvent}
             variant="contained"
             disabled={!location}
@@ -123,10 +121,11 @@ export default function CreateEvent({ location, onCancelEvent }) {
             Create
           </Button>
           <Button
-            style={{ marginTop: 20 }}
+            style={{ marginTop: 20, color: "#FCCA42" }}
             onClick={onCancelEvent}
             variant="outlined"
             disabled={!location}
+            // className={classes.btn}
           >
             Cancel
           </Button>

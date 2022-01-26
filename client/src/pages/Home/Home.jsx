@@ -26,6 +26,10 @@ const useStyles = makeStyles((theme) =>
       // padding: theme.spacing(1),
       height: theme.spacing(50),
     },
+    // myStyle: {
+    //   // padding: theme.spacing(1),
+    //   height: theme.spacing(50),
+    // },
   })
 );
 
@@ -54,7 +58,11 @@ export default function Home() {
     <div className="create-event">
       <div className=" create-event__container">
         <Button
-          style={{ marginTop: 20, backgroundColor: "#FCCA42" }}
+          style={{
+            marginTop: 20,
+            backgroundColor: "#FCCA42",
+            padding: 20,
+          }}
           onClick={allowCreateHandler}
           variant="contained"
           color={"primary"}
@@ -84,7 +92,7 @@ export default function Home() {
     <div style={{ width: "100%", padding: "1px" }}>
       <Grid container>
         <Grid className="below-header" item xs={12} sm={"320px"}>
-          <Paper className={classes.myStyle}>
+          <Paper style={{ boxShadow: "none" }}>
             <Hero />
           </Paper>
         </Grid>
