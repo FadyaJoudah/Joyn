@@ -67,11 +67,12 @@ export default function SignInSide() {
           sm={4}
           md={7}
           sx={{
-            backgroundImage: "url(https://source.unsplash.com/random)",
+            backgroundImage:
+              "url(https://images.pexels.com/photos/8373607/pexels-photo-8373607.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500)",
             backgroundRepeat: "no-repeat",
             backgroundColor: (t) =>
               t.palette.mode === "light"
-                ? t.palette.grey[50]
+                ? t.palette.grey[5]
                 : t.palette.grey[900],
             backgroundSize: "cover",
             backgroundPosition: "center",
@@ -87,7 +88,7 @@ export default function SignInSide() {
               alignItems: "center",
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+            <Avatar sx={{ m: 1 }} style={{ backgroundColor: "#FCCA42" }}>
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
@@ -119,15 +120,12 @@ export default function SignInSide() {
                 id="password"
                 autoComplete="current-password"
               />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-              />
+
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
-                color={"primary"}
+                style={{ backgroundColor: "#FCCA42" }}
                 sx={{ mt: 3, mb: 2 }}
               >
                 Sign In

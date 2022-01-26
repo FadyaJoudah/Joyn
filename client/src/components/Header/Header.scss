@@ -1,8 +1,18 @@
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
 .avatar {
   background-color: white;
+  @include tablet {
+    z-index: 1;
+  }
 }
 .header {
-  background-color: $primary-bg;
-  border-bottom: 1px white;
+  background-color: black;
+  // border-bottom: 1px white;
+}
+.logo {
+  @include tablet {
+    font-size: 40px;
+  }
 }

@@ -30,7 +30,7 @@ export default function Map({ onMapClick, newLocation }) {
   return (
     // Important! Always set the container height explicitly
     //TODO: move this style to scss file
-    <div style={{ height: "40rem", width: "100%" }}>
+    <div style={{ height: "70vh", width: "100%" }}>
       <GoogleMapReact
         onClick={({ x, y, lat, lng, event }) => onMapClick({ lat, lng })}
         //TODO: use env of key
@@ -42,6 +42,7 @@ export default function Map({ onMapClick, newLocation }) {
           panControl: false,
           mapTypeControl: false,
           scrollwheel: false,
+          // saturation:
           hide: [
             {
               featureType: "poi.business",

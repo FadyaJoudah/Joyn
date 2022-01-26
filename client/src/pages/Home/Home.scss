@@ -8,8 +8,10 @@
   // background-color: $secondary-accent;
   @include flex(_, center, center);
   @include tablet {
+    @include flex(_, center, flex-start);
     border-left: 6px solid $secondary-accent;
-    height: 20rem;
+    height: 100%;
+    width: 100%;
   }
   &__map {
     height: 3rem;
@@ -21,9 +23,12 @@
   }
   &__instructions {
     @include text-settings(25px, _, 700);
-    margin: 1rem;
-    font-weight: 500;
-    line-height: 2;
+    margin: 4rem 1rem 1rem 1rem;
+    @include tablet {
+      @include text-settings(18px, _, 600);
+      text-align: center;
+    }
+
     color: $primary-bg;
   }
 }

@@ -61,7 +61,7 @@ export default function Home() {
           style={{
             marginTop: 20,
             backgroundColor: "#FCCA42",
-            padding: 20,
+            padding: 15,
           }}
           onClick={allowCreateHandler}
           variant="contained"
@@ -89,7 +89,7 @@ export default function Home() {
   );
 
   return (
-    <div style={{ width: "100%", padding: "1px" }}>
+    <div style={{ width: "100%" }}>
       <Grid container>
         <Grid className="below-header" item xs={12} sm={"320px"}>
           <Paper style={{ boxShadow: "none" }}>
@@ -100,7 +100,7 @@ export default function Home() {
         <Grid item display={{ xs: "block", sm: "none" }}>
           {createEventForm}
         </Grid>
-        <Grid className={classes.mobile} item xs={12} sm={8}>
+        <Grid className={classes.root} item xs={12} sm={8}>
           <GoogleMapsReact onMapClick={onMapClick} newLocation={newLocation} />
         </Grid>
         <Grid item display={{ xs: "none", sm: "block" }} sm={4}>

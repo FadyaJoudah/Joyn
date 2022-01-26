@@ -97,7 +97,14 @@ export default function CreateEvent({ location, onCancelEvent }) {
             onChange={() => {
               setPetsAllowed(!petsAllowed);
             }}
-            control={<Switch defaultChecked />}
+            control={
+              <Switch
+                style={{
+                  color: "#FCCA42",
+                }}
+                defaultChecked
+              />
+            }
             label="Pet Friendly"
           />
           <FormControlLabel
@@ -105,7 +112,14 @@ export default function CreateEvent({ location, onCancelEvent }) {
             onChange={() => {
               setVaccinationRequired(!vaccinationRequired);
             }}
-            control={<Switch defaultChecked />}
+            control={
+              <Switch
+                defaultChecked
+                style={{
+                  color: "#FCCA42",
+                }}
+              />
+            }
             label="Must Be Vaccinated"
           />
 
@@ -121,7 +135,7 @@ export default function CreateEvent({ location, onCancelEvent }) {
             Create
           </Button>
           <Button
-            style={{ marginTop: 20, color: "#FCCA42" }}
+            style={{ marginTop: 20, borderColor: "#FCCA42", color: "#FCCA42" }}
             onClick={onCancelEvent}
             variant="outlined"
             disabled={!location}

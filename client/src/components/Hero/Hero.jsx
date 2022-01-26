@@ -9,16 +9,19 @@ export default function Hero() {
         {/* <div className="image__one">this is image1</div> */}
         <div className="image__two">this is image2</div>
         {/* TODO: check out why the keyframes doesn't work */}
-
-        <div className="image__color-block">
-          <p className="hero-text">
-            Meet new friends and bring your local community together for social
-            events in your city.
-          </p>
+        <div className="image__bubbles">
+          <div className="image__bubbles image__bubbles--main">
+            <p className="hero-text">
+              Meet new friends and bring your local community together for
+              social events in your city.
+            </p>
+          </div>
+          <div className="image__bubbles image__bubbles--two"></div>
+          <div className="image__bubbles image__bubbles--three"></div>
+          {/* <div className="color-three"> 3</div> */}
+          <div className="color-four">4 </div>
+          <div className="color-five"> 5</div>
         </div>
-        <div className="color-two"></div>
-        <div className="color-three">2 </div>
-        <div className="color-four"> </div>
       </div>
     </div>
   );
