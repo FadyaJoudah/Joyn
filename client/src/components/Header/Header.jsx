@@ -35,12 +35,7 @@ export default function MenuAppBar() {
   const open = Boolean(anchorEl);
   const [user, setUser] = React.useState(undefined);
   const history = useHistory();
-  useEffect(() => {
-    axios.get("http://localhost:8080/user").then((res) => {
-      console.log(res.data);
-      setUser(res.data);
-    });
-  }, []);
+
   const handleChange = (event) => {
     setAuth(event.target.checked);
   };
@@ -57,6 +52,10 @@ export default function MenuAppBar() {
     axios.defaults.headers.common["Authorization"] = undefined;
     history.push("/signin");
   };
+  const handleSignIn = () => {
+    history.push("/signin");
+  };
+  const isSingedIn = localStorage.getItem("token");
 
   return (
     <div>
@@ -65,8 +64,8 @@ export default function MenuAppBar() {
           <Toolbar className="header">
             <Typography
               style={{ sm: { backgroundColor: "red" } }}
-              variant={4}
-              className={[classes.title, "logo"]}
+              variant={"h4"}
+              className={`${classes.title} "logo"`}
             >
               JOYN
               {/* <Circle /> */}
@@ -98,9 +97,14 @@ export default function MenuAppBar() {
                   open={open}
                   onClose={handleClose}
                 >
+                  {!isSingedIn && (
+                    <MenuItem onClick={handleSignIn}>Sign in</MenuItem>
+                  )}
                   <MenuItem onClick={handleClose}>Profile</MenuItem>
                   <MenuItem onClick={handleClose}>My account</MenuItem>
-                  <MenuItem onClick={handleLogout}>Logout</MenuItem>
+                  {isSingedIn && (
+                    <MenuItem onClick={handleLogout}>Logout</MenuItem>
+                  )}
                 </Menu>
               </div>
             )}

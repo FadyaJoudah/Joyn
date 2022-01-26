@@ -40,16 +40,17 @@
     }
 
     &--type {
-      margin: 0.5rem 0 0 2rem;
+      // margin: 0.5rem 0 0 2rem;
     }
     &--description {
       @include text-settings(14px, _, _);
+      margin: 0.1rem 0 1rem 2.3rem;
     }
   }
 }
 
 .container {
-  margin: 0.8rem 0 0 0;
+  margin: 0.4rem 0 0 0;
   @include flex(row, _, _);
 }
 
@@ -73,7 +74,7 @@
   position: absolute;
   width: 0;
   height: 0;
-  left: rem;
+  // left: rem;
   top: 250px;
   border: 25px solid;
   border-color: rgb(255, 248, 248) transparent transparent #666;

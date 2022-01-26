@@ -25,8 +25,14 @@ export default function PopUp({
               src={`https://avatars.dicebear.com/api/croodles/${createdBy}.svg`}
             />
 
-            <p className="event__info event__info--user-name">{createdBy} </p>
+            <p className="event__info event__info--user-name">{createdBy}</p>
           </div>
+          {/* <p className="event__info event__info--vaccine">
+            {vaccinationRequired ? "Must be Vaccinated" : ""}
+          </p>
+          <p className="event__info event__info--pets">
+            {petsAllowed ? "Pet Friendly" : ""}
+          </p> */}
 
           <div className="container container--size">
             <i className="icon icon--size"></i>
@@ -49,21 +55,22 @@ export default function PopUp({
 
           <div className="container container--description">
             <i className="icon icon--description"></i>
-            <p className="event__info event__info--description">
-              {description}
+            <p className="event__info event__info--type">
+              {type} {petsAllowed ? " | Pet Friendly" : ""}
+              {vaccinationRequired ? " | Must be Vaccinated" : ""}
             </p>
-            <p className="event__info event__info--type">{type}</p>
           </div>
+          <p className="event__info event__info--description">{description}</p>
 
-          <div className="container container--pets">
+          {/* <div className="container container--pets">
             <i className="icon icon--pets"></i>
             <p className="event__info">{petsAllowed}</p>
-          </div>
+          </div> */}
 
-          <div className="container container--vaccination">
+          {/* <div className="container container--vaccination">
             <i className="icon icon--vaccine"></i>
             <p className="event__info">{vaccinationRequired}</p>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

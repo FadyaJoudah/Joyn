@@ -4,6 +4,7 @@ import axios from "axios";
 import Pin from "../Pin/Pin";
 import { Card } from "@mui/material";
 import PopUp from "../PopUP/PopUp";
+import "./GoogleMapsReact.scss";
 
 const google_maps_key = process.env.REACT_APP_GM_KEY;
 
@@ -13,16 +14,9 @@ const vancouver = {
   lng: -123.13854,
 };
 
-export default function Map({ onMapClick, newLocation }) {
-  const [eventList, setEventList] = useState([]);
+export default function Map({ onMapClick, newLocation, eventList }) {
   const [popUpEvent, setPopUpEvent] = useState();
-  console.log("this is list", eventList, "this is event", popUpEvent);
-  //request events on the first render only, and when refreshing the page
-  useEffect(() => {
-    axios.get("http://localhost:8080/events/all").then((res) => {
-      setEventList(res.data);
-    });
-  }, []);
+
   const defaultMapOptions = {
     // styles: mapStyles,
   };
@@ -30,11 +24,11 @@ export default function Map({ onMapClick, newLocation }) {
   return (
     // Important! Always set the container height explicitly
     //TODO: move this style to scss file
-    <div style={{ height: "70vh", width: "100%" }}>
+    <div className="map-container">
       <GoogleMapReact
         onClick={({ x, y, lat, lng, event }) => onMapClick({ lat, lng })}
         //TODO: use env of key
-        // bootstrapURLKeys={{ key: "AIzaSyAm9zGabaaseCQlbCarLu3rSkqKi7j-Asc" }}
+        bootstrapURLKeys={{ key: "AIzaSyAm9zGabaaseCQlbCarLu3rSkqKi7j-Asc" }}
         //default map view and zoom
         defaultCenter={vancouver}
         defaultZoom={13}
@@ -57,9 +51,10 @@ export default function Map({ onMapClick, newLocation }) {
         }}
       >
         {/* mapping the event list to display it on map as pins */}
-        {eventList.map((evnt) => {
+        {eventList.map((evnt, i) => {
           return (
             <Pin
+              key={i}
               onPinClick={() => {
                 setPopUpEvent(evnt);
               }}
@@ -68,7 +63,9 @@ export default function Map({ onMapClick, newLocation }) {
             />
           );
         })}
-        {newLocation && <Pin lat={newLocation.lat} lng={newLocation.lng} />}
+        {newLocation && (
+          <Pin lat={newLocation.lat} lng={newLocation.lng} light={true} />
+        )}
         {popUpEvent ? (
           <PopUp
             lat={popUpEvent.location.lat}

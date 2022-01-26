@@ -25,29 +25,22 @@ export function createEvent(
   vaccinationRequired,
   location
 ) {
-  return axios
-    .post(
-      "http://localhost:8080/events/create",
-      {
-        size,
-        address,
-        type,
-        timestamp: "2013-08-05 18:19:03",
-        description,
-        petsAllowed,
-        vaccinationRequired,
-        location,
+  return axios.post(
+    "http://localhost:8080/events/create",
+    {
+      size,
+      address,
+      type,
+      timestamp: "2013-08-05 18:19:03",
+      description,
+      petsAllowed,
+      vaccinationRequired,
+      location,
+    },
+    {
+      headers: {
+        Authorization: token,
       },
-      {
-        headers: {
-          Authorization: token,
-        },
-      }
-    )
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.log("request fail");
-    });
+    }
+  );
 }

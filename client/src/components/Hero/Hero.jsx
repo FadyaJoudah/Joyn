@@ -19,8 +19,8 @@ export default function Hero() {
           <div className="image__bubbles image__bubbles--two"></div>
           <div className="image__bubbles image__bubbles--three"></div>
           {/* <div className="color-three"> 3</div> */}
-          <div className="color-four">4 </div>
-          <div className="color-five"> 5</div>
+          <div className="color-four"> </div>
+          <div className="color-five"> </div>
         </div>
       </div>
     </div>

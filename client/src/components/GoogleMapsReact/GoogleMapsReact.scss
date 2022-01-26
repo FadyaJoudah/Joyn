@@ -1,0 +1,10 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+.map-container {
+  height: 30rem;
+  width: 100%;
+  @include tablet {
+    height: 56.25rem;
+  }
+}

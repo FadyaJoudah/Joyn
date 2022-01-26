@@ -23,7 +23,11 @@ const eventType = [
   { label: "Volunteer" },
 ];
 
-export default function CreateEvent({ location, onCancelEvent }) {
+export default function CreateEvent({
+  location,
+  onCancelEvent,
+  onCreateEvent,
+}) {
   // const classes = useStyles();
 
   const [value, setValue] = useState(null);
@@ -36,8 +40,7 @@ export default function CreateEvent({ location, onCancelEvent }) {
   const [vaccinationRequired, setVaccinationRequired] = useState(true);
 
   function handleCreateEvent(e) {
-    console.log(size);
-    createEvent(
+    onCreateEvent(
       size,
       address,
       type,

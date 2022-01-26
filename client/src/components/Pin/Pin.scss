@@ -4,9 +4,10 @@
   width: 2rem;
   height: 2rem;
   &--light {
-    content: url("../../assets/icons/pin-light.svg");
+    content: url("../../assets/icons/pin-dark.svg");
   }
   &--dark {
     content: url("../../assets/icons/map-pin\ \(1\).svg");
   }
+  transform: translateY(-100%) translateX(-50%);
 }
