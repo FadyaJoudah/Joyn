@@ -139,7 +139,6 @@ export default function CreateEvent({
             onClick={onCancelEvent}
             variant="outlined"
             disabled={!location}
-            // className={classes.btn}
           >
             Cancel
           </Button>

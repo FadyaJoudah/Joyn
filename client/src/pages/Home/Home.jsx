@@ -1,4 +1,3 @@
-// import { Avatar } from "@mui/material";
 import "./Home.scss";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
@@ -17,7 +16,6 @@ import { createEvent } from "../../API/API";
 const useStyles = makeStyles((theme) =>
   createStyles({
     paper: {
-      // padding: theme.spacing(20, 18),
       textAlign: "center",
       color: theme.palette.text.secondary,
     },
@@ -25,13 +23,8 @@ const useStyles = makeStyles((theme) =>
       flexGrow: 1,
     },
     myStyle: {
-      // padding: theme.spacing(1),
       height: theme.spacing(50),
     },
-    // myStyle: {
-    //   // padding: theme.spacing(1),
-    //   height: theme.spacing(50),
-    // },
   })
 );
 
@@ -46,7 +39,6 @@ export default function Home() {
 
   //request events on the first render only, and when refreshing the page
   React.useEffect(() => {
-    console.log(axios.request.headers);
     axios.get("http://localhost:8080/events/all").then((res) => {
       setEventList(res.data);
     });
@@ -100,14 +92,12 @@ export default function Home() {
   const handleDeleteEvent = (eventId) => {
     axios.delete(`http://localhost:8080/events/${eventId}`).then(() => {
       let newEventList = [...eventList];
-      console.log("should delete this event", eventId);
       newEventList = newEventList.filter((eventItem) => {
         return eventItem.id !== eventId;
       });
       setEventList(newEventList);
     });
   };
-  console.log(newLocation);
   const createEventForm = newLocation ? (
     <CreateEvent
       location={newLocation}
@@ -157,11 +147,6 @@ export default function Home() {
             Sign in
           </Button>
         )}
-        {/* {allowCreating && newLocation && (
-          // <div className=" create-event__instructions">
-          //   Complete The Event Information
-          // </div>
-        )} */}
       </div>
     </div>
   );

@@ -1,5 +1,3 @@
-// import { createAvatar } from "@dicebear/avatars";
-// import * as style from "@dicebear/adventurer";
 import "./Avatar.scss";
 
 import React from "react";

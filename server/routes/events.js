@@ -82,7 +82,6 @@ events.get("/all", (req, res) => {
       //if the user is logged in they will have access to all events info
       if (decodedToken) {
         const allEvents = rows.map((row) => {
-          console.log(row.user_id, row.id, row.userID);
           return {
             id: row.id,
             creatureID: row.userID,
@@ -123,7 +122,6 @@ events.get("/all", (req, res) => {
 });
 events.delete("/:event_id", (req, res) => {
   //deconstruct req to get db and headers
-  console.log("here");
   const { db, headers } = req;
 
   // getting token from headers

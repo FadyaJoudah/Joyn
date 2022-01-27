@@ -23,8 +23,6 @@
   }
 
   &__user-info {
-    // margin: 0.5rem 0.5rem 0 0;
-    // height: 4rem;
     width: 90%;
     @include flex(row, _, center);
   }
@@ -40,7 +38,6 @@
     }
 
     &--type {
-      // margin: 0.5rem 0 0 2rem;
     }
     &--description {
       @include text-settings(14px, _, _);
@@ -75,14 +72,9 @@
   position: absolute;
   width: 0;
   height: 0;
-  // left: rem;
   top: 250px;
   border: 25px solid;
   border-color: rgb(255, 248, 248) transparent transparent #666;
-}
-
-.button {
-  // transform: translateX(12%);
 }
 
 .logged-out {
@@ -91,6 +83,5 @@
 .button-Container {
   height: 2rem;
   width: 8rem;
-  // background-color: red;
   margin: 0 0 0 11rem;
 }

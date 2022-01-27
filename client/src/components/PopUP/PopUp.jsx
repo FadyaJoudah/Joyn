@@ -85,7 +85,6 @@ export default function PopUp({ event: JoynEvent, closePop, onDeleteEvent }) {
               onClick={onSignInClick}
               variant="contained"
               className="logged-out__button"
-              // href="mailto:abc@example.com?subject = Feedback&body = Message"
               style={{ backgroundColor: "#FCCA42", marginTop: 24 }}
             >
               sign in
@@ -98,7 +97,6 @@ export default function PopUp({ event: JoynEvent, closePop, onDeleteEvent }) {
               onClick={() => onDeleteEvent(JoynEvent.id)}
               variant="outlined"
               className="logged-out__button"
-              // href="mailto:abc@example.com?subject = Feedback&body = Message"
               style={{ color: "#FCCA42", marginLeft: 20, marginBottom: 20 }}
             >
               delete

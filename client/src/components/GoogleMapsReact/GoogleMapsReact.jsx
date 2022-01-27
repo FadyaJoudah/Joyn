@@ -22,9 +22,7 @@ export default function Map({
 }) {
   const [popUpEvent, setPopUpEvent] = useState();
 
-  const defaultMapOptions = {
-    // styles: mapStyles,
-  };
+  const defaultMapOptions = {};
   const handleOnMapClick = ({ x, y, lat, lng, event }) => {
     onMapClick({ lat, lng });
   };
@@ -65,7 +63,6 @@ export default function Map({
           panControl: false,
           mapTypeControl: false,
           scrollwheel: false,
-          // saturation:
           hide: [
             {
               featureType: "poi.business",

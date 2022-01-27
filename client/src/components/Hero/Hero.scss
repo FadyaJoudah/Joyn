@@ -4,7 +4,6 @@
 .image {
   background-color: black;
   position: relative;
-  // background-color: pink;
   width: 100%;
   height: 20rem;
   margin: auto;
@@ -73,24 +72,11 @@
     }
   }
 
-  // }
   &__two {
     background-repeat: no-repeat;
-    // z-index: 0;
-    // @include tablet {
-    //   background-repeat: no-repeat;
+
     background-size: cover;
-    //   height: 41%;
-    // }
-    // border-radius: 10px;
-    // // @include tablet {
-    // //   height: 15rem;
-    // // top: 10rem;
-    // // left: 8rem;
-    // // z-index: 1;
-    // //   width: 20rem;
-    // // }
-    // background-color: rgba(238, 231, 173, 0.276);
+
     background-image: url("../../assets/images/pexels-photo-5741042.jpeg");
     filter: hue-rotate(180deg);
     top: 0;
@@ -98,7 +84,6 @@
     left: 0;
     right: 0;
     position: absolute;
-    // background-size: cover;
   }
   &__color-block {
     text-align: center;
@@ -107,10 +92,8 @@
     height: 6rem;
     width: 20rem;
     background-color: $secondary-accent-light;
-    // opacity: 80%;
     border-radius: 6px;
     position: absolute;
-    // top: 20rem;
     left: 2rem;
     z-index: 01;
     z-index: 3;
