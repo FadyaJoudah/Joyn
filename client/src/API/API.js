@@ -1,6 +1,8 @@
 import axios from "axios";
 const token = window.localStorage.getItem("token");
-axios.defaults.headers.common["Authorization"] = token;
+if (token) {
+  axios.defaults.headers.common["Authorization"] = token;
+}
 
 //axios requests
 
@@ -31,7 +33,7 @@ export function createEvent(
       size,
       address,
       type,
-      timestamp: "2013-08-05 18:19:03",
+      timestamp: "2022-01-28 18:19:00",
       description,
       petsAllowed,
       vaccinationRequired,

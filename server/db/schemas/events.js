@@ -16,7 +16,7 @@ function addEvent(
 // query to get all the events with user info to server
 function getAllEvents() {
   const query =
-    "SELECT events.*,users.username, users.id, users.email FROM events JOIN users on users.id=events.user_id;";
+    "SELECT events.*,users.username, users.id as userID, users.email FROM events JOIN users on users.id=events.user_id;";
   return query;
 }
 

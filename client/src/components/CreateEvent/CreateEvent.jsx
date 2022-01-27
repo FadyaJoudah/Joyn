@@ -28,9 +28,6 @@ export default function CreateEvent({
   onCancelEvent,
   onCreateEvent,
 }) {
-  // const classes = useStyles();
-
-  const [value, setValue] = useState(null);
   const [size, setSize] = useState(1);
   const [address, setAddress] = useState("");
   const [type, setType] = useState("");

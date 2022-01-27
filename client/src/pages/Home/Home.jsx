@@ -46,6 +46,7 @@ export default function Home() {
 
   //request events on the first render only, and when refreshing the page
   React.useEffect(() => {
+    console.log(axios.request.headers);
     axios.get("http://localhost:8080/events/all").then((res) => {
       setEventList(res.data);
     });
@@ -96,6 +97,16 @@ export default function Home() {
       });
     });
   }
+  const handleDeleteEvent = (eventId) => {
+    axios.delete(`http://localhost:8080/events/${eventId}`).then(() => {
+      let newEventList = [...eventList];
+      console.log("should delete this event", eventId);
+      newEventList = newEventList.filter((eventItem) => {
+        return eventItem.id !== eventId;
+      });
+      setEventList(newEventList);
+    });
+  };
   console.log(newLocation);
   const createEventForm = newLocation ? (
     <CreateEvent
@@ -172,6 +183,7 @@ export default function Home() {
             onMapClick={onMapClick}
             newLocation={newLocation}
             eventList={eventList}
+            onDeleteEvent={handleDeleteEvent}
           />
         </Grid>
         <Grid item display={{ xs: "none", sm: "block" }} sm={4}>

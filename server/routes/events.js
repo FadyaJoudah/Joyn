@@ -54,19 +54,8 @@ events.post("/create", (req, res) => {
       } else {
         //select the id of the event
         db.query(`SELECT @@identity;`, (err, row2) => {
-          const eventID = row2[0]["@@identity"];
-          res.status(201).send({
-            id: eventID,
-            userID,
-            size,
-            address,
-            type,
-            timestamp,
-            description,
-            petsFriendly,
-            vaccine,
-            location,
-          });
+          // const eventID = row2[0]["@@identity"];
+          res.status(201).send("created");
         });
       }
     }
@@ -93,9 +82,10 @@ events.get("/all", (req, res) => {
       //if the user is logged in they will have access to all events info
       if (decodedToken) {
         const allEvents = rows.map((row) => {
+          console.log(row.user_id, row.id, row.userID);
           return {
             id: row.id,
-            creatureID: row.user_id,
+            creatureID: row.userID,
             createdBy: row.username,
             organizerEmail: row.email,
             size: row.size,
@@ -130,6 +120,27 @@ events.get("/all", (req, res) => {
       }
     }
   });
+});
+events.delete("/:event_id", (req, res) => {
+  //deconstruct req to get db and headers
+  console.log("here");
+  const { db, headers } = req;
+
+  // getting token from headers
+  const token = headers.authorization;
+  let decodedToken;
+
+  //checks if the user is logged in and takes the users info from token after decoding
+  if (token) {
+    decodedToken = jwt.verify(token, "peewee");
+  }
+
+  db.query(
+    `DELETE from events where id=${req.params["event_id"]}`,
+    (err, rows, fields) => {
+      res.status(201).send("deleted");
+    }
+  );
 });
 
 module.exports = events;

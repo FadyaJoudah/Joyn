@@ -14,11 +14,38 @@ const vancouver = {
   lng: -123.13854,
 };
 
-export default function Map({ onMapClick, newLocation, eventList }) {
+export default function Map({
+  onMapClick,
+  newLocation,
+  eventList,
+  onDeleteEvent,
+}) {
   const [popUpEvent, setPopUpEvent] = useState();
 
   const defaultMapOptions = {
     // styles: mapStyles,
+  };
+  const handleOnMapClick = ({ x, y, lat, lng, event }) => {
+    onMapClick({ lat, lng });
+  };
+  const getCenter = () => {
+    let center = vancouver;
+    if (popUpEvent) {
+      center = popUpEvent.location;
+    }
+    if (newLocation) {
+      center = newLocation;
+    }
+    return center;
+  };
+  var mapOptions = {
+    styles: [
+      {
+        featureType: "poi",
+        elementType: "labels",
+        stylers: [{ visibility: "off" }],
+      },
+    ],
   };
 
   return (
@@ -26,11 +53,13 @@ export default function Map({ onMapClick, newLocation, eventList }) {
     //TODO: move this style to scss file
     <div className="map-container">
       <GoogleMapReact
-        onClick={({ x, y, lat, lng, event }) => onMapClick({ lat, lng })}
+        onClick={handleOnMapClick}
         //TODO: use env of key
         bootstrapURLKeys={{ key: "AIzaSyAm9zGabaaseCQlbCarLu3rSkqKi7j-Asc" }}
         //default map view and zoom
         defaultCenter={vancouver}
+        clickableIcons={true}
+        center={getCenter()}
         defaultZoom={13}
         options={{
           panControl: false,
@@ -66,13 +95,23 @@ export default function Map({ onMapClick, newLocation, eventList }) {
         {newLocation && (
           <Pin lat={newLocation.lat} lng={newLocation.lng} light={true} />
         )}
-        {popUpEvent ? (
+        {popUpEvent && (
           <PopUp
             lat={popUpEvent.location.lat}
             lng={popUpEvent.location.lng}
             event={popUpEvent}
+            closePop={() => setPopUpEvent()}
+            onDeleteEvent={(id) => {
+              onDeleteEvent(id);
+              setPopUpEvent();
+            }}
           />
-        ) : null}
+        )}
+        {/* {popUpEvent && !localStorage.getItem("token") && (
+          <div lat={popUpEvent.location.lat} lng={popUpEvent.location.lng}>
+            sign in first
+          </div>
+        )} */}
       </GoogleMapReact>
     </div>
   );

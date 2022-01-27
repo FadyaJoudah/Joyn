@@ -12,7 +12,7 @@ import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { signIn } from "../../API/API";
 import { useHistory } from "react-router-dom";
-
+import axios from "axios";
 //TODO: refactor and add comments & change themes
 function Copyright(props) {
   return (
@@ -34,7 +34,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function SignInSide() {
+export default function SignInSide({ onSignIn }) {
   const history = useHistory();
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -47,7 +47,11 @@ export default function SignInSide() {
     signIn(username, password)
       .then((res) => {
         const token = res.data.token;
-        window.localStorage.setItem("token", token);
+        localStorage.setItem("token", token);
+        axios.defaults.headers.common["Authorization"] = token;
+        axios.get("http://localhost:8080/user").then((res) => {
+          onSignIn(res.data);
+        });
         history.push("/");
       })
       .catch((err) => {
@@ -90,7 +94,7 @@ export default function SignInSide() {
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Sign in
+              Sign in to Joyn
             </Typography>
             <Box
               component="form"
@@ -127,6 +131,15 @@ export default function SignInSide() {
                 sx={{ mt: 3, mb: 2 }}
               >
                 Sign In
+              </Button>
+
+              <Button
+                type="submit"
+                variant="contained"
+                style={{ backgroundColor: "#FCCA42" }}
+                sx={{ mt: 3, mb: 2 }}
+              >
+                Sign up
               </Button>
               <Grid container>
                 <Grid item xs></Grid>

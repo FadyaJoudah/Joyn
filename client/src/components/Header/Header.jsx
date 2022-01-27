@@ -28,12 +28,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MenuAppBar() {
+export default function MenuAppBar({ user }) {
   const classes = useStyles();
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-  const [user, setUser] = React.useState(undefined);
   const history = useHistory();
 
   const handleChange = (event) => {
@@ -49,7 +48,8 @@ export default function MenuAppBar() {
   };
   const handleLogout = () => {
     localStorage.removeItem("token");
-    axios.defaults.headers.common["Authorization"] = undefined;
+    localStorage.removeItem("user");
+    delete axios.defaults.headers.common["Authorization"];
     history.push("/signin");
   };
   const handleSignIn = () => {

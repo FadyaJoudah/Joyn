@@ -2,10 +2,10 @@
 @use "../../styles/partials/variables" as *;
 
 .card {
-  transform: translateY(-100%) translateX(-45%);
+  transform: translateY(-111%) translateX(-50%);
   background-color: $primary-bg-clear;
   overflow: hidden;
-  height: 18rem;
+  min-height: 20rem;
   width: 20rem;
   border-radius: 20px;
 }
@@ -25,7 +25,7 @@
   &__user-info {
     // margin: 0.5rem 0.5rem 0 0;
     // height: 4rem;
-    // width: 8rem;
+    width: 90%;
     @include flex(row, _, center);
   }
   &__avatar {
@@ -33,7 +33,7 @@
     background-color: white;
   }
   &__info {
-    margin: 0.5rem;
+    margin: 0.2rem;
     &--user-name {
       width: 100%;
       border-radius: 3px;
@@ -44,7 +44,8 @@
     }
     &--description {
       @include text-settings(14px, _, _);
-      margin: 0.1rem 0 1rem 2.3rem;
+      width: 80%;
+      margin: 0.1rem 0 1rem 2rem;
     }
   }
 }
@@ -78,4 +79,18 @@
   top: 250px;
   border: 25px solid;
   border-color: rgb(255, 248, 248) transparent transparent #666;
+}
+
+.button {
+  // transform: translateX(12%);
+}
+
+.logged-out {
+  margin: 5rem 2rem 2rem 2rem;
+}
+.button-Container {
+  height: 2rem;
+  width: 8rem;
+  // background-color: red;
+  margin: 0 0 0 11rem;
 }
