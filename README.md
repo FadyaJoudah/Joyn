@@ -1,5 +1,5 @@
 # fj-capstone
- instock
+
 Joyn is an event sharing app for sharing  activities with others to joyn  
  It is a full-stack project. Therefore, both the node modules in the server folder and client folder need to be installed before running the app. Data is kept in data base . Backend server is using expressJS and has various end points to send, post, get, delete. Frontend is setup with React using create-react-app. Routing is done with the react-router-dom. APIs used are google API and dice bear for avatar generation
 
