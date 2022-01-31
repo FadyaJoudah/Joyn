@@ -1,12 +1,43 @@
-# fj-capstone
+# Joyn
 
-Joyn is an event sharing app for sharing  activities with others to joyn  
- It is a full-stack project. Therefore, both the node modules in the server folder and client folder need to be installed before running the app. Data is kept in data base . Backend server is using expressJS and has various end points to send, post, get, delete. Frontend is setup with React using create-react-app. Routing is done with the react-router-dom. APIs used are google API and dice bear for avatar generation
+Joyn is an event sharing app for sharing  activities with others to joyn these events have type, capacity, time, address, if the evnet is pet friendly, guests vaccination stause
 
-Available Scripts
-npm run watch
-In the server directory, this script launches the server. nodemon is installed as a dev dependecy to help restarting the server. This script activates nodemon to watch changes on the index.js in the server side.
+##screenshots
+<img width="729" alt="Screen Shot 2022-01-30 at 2 11 57 PM" src="https://user-images.githubusercontent.com/73395393/151727709-9bc5ed21-485b-452c-8c55-fc83a2756a18.png">
 
-npm start
-In client directory, you can run this script to run the app in the development mode. The page will reload when you make changes.
-You may also see any lint errors in the console.
+## Installation
+Clone this repo
+
+1- runt the following in server side (backend)
+
+```bash
+ cd server
+  npm i
+  npm start
+
+```
+2- run the following in Clined side (frontend)
+```bash
+   cd client
+  npm i
+  npm start
+  ```
+
+## Tech Stack
+Client Side:
+
+Google maps API
+Dice bear API
+Sass
+MUI
+Reace Router Dom
+Axios
+
+server side:
+
+JWT
+MYSQL
+Node.js
+
+
+
