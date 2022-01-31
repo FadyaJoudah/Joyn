@@ -2,7 +2,7 @@
 
 Joyn is an event sharing app for sharing  activities with others to joyn these events have type, capacity, time, address, if the evnet is pet friendly, guests vaccination stause
 
-##screenshots
+## screenshots
 <img width="729" alt="Screen Shot 2022-01-30 at 2 11 57 PM" src="https://user-images.githubusercontent.com/73395393/151727709-9bc5ed21-485b-452c-8c55-fc83a2756a18.png">
 
 ## Installation
