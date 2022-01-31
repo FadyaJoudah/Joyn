@@ -39,5 +39,6 @@ JWT
 MYSQL
 Node.js
 
-
+# Notes
+ ask me for Google API key 
 
