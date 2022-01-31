@@ -40,5 +40,5 @@ MYSQL
 Node.js
 
 # Notes
- ask me for Google API key 
+ the google API key is deactivated
 
