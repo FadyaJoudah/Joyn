@@ -53,7 +53,7 @@ export default function Map({
       <GoogleMapReact
         onClick={handleOnMapClick}
         //TODO: use env of key
-        bootstrapURLKeys={{ key: "AIzaSyAm9zGabaaseCQlbCarLu3rSkqKi7j-Asc" }}
+        bootstrapURLKeys={{ key: google_maps_key }}
         //default map view and zoom
         defaultCenter={vancouver}
         clickableIcons={true}
