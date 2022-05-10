@@ -39,6 +39,5 @@ JWT
 MYSQL
 Node.js
 
-# Notes
- the google API key is deactivated
+
 
