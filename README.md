@@ -30,7 +30,7 @@ Google maps API
 Dice bear API
 Sass
 MUI
-Reace Router Dom
+React Router Dom
 Axios
 
 Server Side:
